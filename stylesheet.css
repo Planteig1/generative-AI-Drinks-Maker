@@ -1,0 +1,61 @@
+* {
+    font-family:anton;
+    list-style-type: none;
+}
+body {
+    background-image: linear-gradient(to right, #141e30, #243b55);
+    display: flex;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
+    1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#input-drinks {
+    border-radius: 5px;
+    border: 2px solid black;
+    text-align: center;
+}
+#generate-button {
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+/*Ingredients list*/
+.ingredients-container {
+    background-color: #FFA3AF;
+}
+/*Loading*/
+.loader {
+    margin: auto;
+    border: 10px solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 10px solid #FFA3AF;
+    width: 100px;
+    height: 100px;
+    animation: spinner 4s linear infinite;
+}
+
+@keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
