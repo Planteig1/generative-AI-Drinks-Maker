@@ -13,11 +13,7 @@ body {
     1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+/*Main Page Design*/
 
 .container {
     display: flex;
@@ -26,24 +22,79 @@ form {
     gap: 10px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 #input-drinks {
     border-radius: 5px;
     border: 2px solid black;
     text-align: center;
 }
-#generate-button {
+button {
     border-radius: 5px;
 }
 
-.hidden {
-    display: none;
+/* Recipe List */
+.recipe {
+    background-color: #243b55;
+    border: solid white 2px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: -1px -1px 16px 6px rgba(0,0,0,1);
+    padding:10px;
 }
+
 
 /*Ingredients list*/
 .ingredients-container {
-    background-color: #FFA3AF;
+    max-width: 50%;
+    margin-top: 40px;
 }
-/*Loading*/
+
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+li {
+    border: solid   black   1px;
+    text-align: center;
+    background-color: #243b55;
+    cursor: pointer;
+    transition: 0.75s;
+    border-radius: 10px;
+}
+li div {
+    border: solid white 2px;
+    border-radius: 10px;
+}
+
+/* All img */
+img {
+    object-fit: fill;
+    width: 100px;
+    height: 150px;
+}
+
+/* Hover Effect */
+li:hover, .selected{
+    transform: scale(110%);
+    background-color: #8EDC80;
+}
+
+
+/*Loading Animation*/
 .loader {
     margin: auto;
     border: 10px solid #EAF0F6;
@@ -59,3 +110,7 @@ form {
     100% { transform: rotate(360deg); }
 }
 
+/*Hidden Element*/
+.hidden {
+    display: none;
+}

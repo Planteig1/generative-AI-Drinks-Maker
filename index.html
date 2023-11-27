@@ -11,34 +11,90 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <section class="container">
         <h1>INTELLISIPS | YOUR AI DRINKS</h1>
-        <form>
+        <form class="get-api-key hidden">
+            <h1>Please Insert Your OpenAI API Key</h1>
+            <input type="text" id="input-api-key">
+            <button type="button" id="input-api-button">Insert API KEY</button>
+        </form>
+
+        <form class="get-drink ">
             <h1>LIST YOUR INGREDIENTS</h1>
             <input type="text" id="input-drinks">
             <button type="button" id="generate-button">Generate drink</button>
         </form>
-        <div class="loader hidden">
-        </div>
-        <div class="recipe">
-        </div>
-    </div>
-    <div class="ingredients-container">
-        <ul>
-            <li id="vodka">123</li>
-            <li id="gin">123</li>
-            <li id="ginger-beer">123123</li>
-            <li id="cola">12312</li>
-            <li id="ice">123123</li>
-            <li id="rum">123123</li>
-            <li id="tequila">123123</li>
-            <li id="soda">13123123</li>
-            <li id="lemon">123123123</li>
-            <li id="lime">12312312</li>
-        </ul>
-    </div>
 
+        <div class="loader hidden"></div>
+
+        <div class="recipe hidden"></div>
+
+        <div class="ingredients-container">
+            <ul>
+                <li class="ingredient">
+                    <div>
+                        <h2>Vodka</h2>
+                        <img src="Images/vodka.png" alt="Vodka">
+                    </div>
+                </li>
+                <li class="ingredient">
+                    <div>
+                        <h2>Rum</h2>
+                        <img src="Images/rum.png" alt="Rum">
+                    </div>
+                </li>
+                <li class="ingredient">
+                    <div>
+                        <h2>Gin</h2>
+                        <img src="Images/gin.png" alt="Gin">
+                    </div>
+                </li>
+                <li class="ingredient">
+                    <div>
+                        <h2>Whiskey</h2>
+                        <img src="Images/whiskey.png" alt="Whiskey">
+                    </div>
+                </li>
+                <li class="ingredient">
+                    <div>
+                        <h2>Tequila</h2>
+                        <img src="Images/tequila.png" alt="Tequia">
+                    </div>
+                </li>
+                <li class="ingredient">
+                    <div>
+                        <h2>Soda</h2>
+                        <img src="Images/soda.png" alt="Soda">
+                    </div>
+                </li>
+                <li class="ingredient">
+                    <div>
+                        <h2>Ginger Beer</h2>
+                        <img src="Images/gingerBeer.png" alt="Ginger Beer">
+                    </div>
+                </li>
+                <li class="ingredient">
+                    <div>
+                        <h2>Lime</h2>
+                        <img src="Images/lime.png" alt="Lime">
+                    </div>
+                </li>
+                <li class="ingredient">
+                    <div>
+                        <h2>Lemon</h2>
+                        <img src="Images/lemon.png" alt="Lemon">
+                    </div>
+                </li>
+                <li class="ingredient">
+                    <div>
+                        <h2>Juice</h2>
+                        <img src="Images/orange.png" alt="Juice">
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </section>
 <script src="main.js"></script>
 </body>
 </html>
-
