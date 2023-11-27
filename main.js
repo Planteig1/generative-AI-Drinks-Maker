@@ -19,6 +19,7 @@ const recipeField = document.querySelector(".recipe");
 let initialToggle = true
 
 // Ingredients list
+const ingredientsContainer = document.querySelector(".ingredients-container")
 const ingredients = document.querySelectorAll(".ingredient")
 
 
@@ -74,6 +75,8 @@ async function isValidApiKey(apiKey) {
 function changeSite () {
     apiKeyPage.classList.toggle("hidden")
     drinksPage.classList.toggle("hidden")
+    ingredientsContainer.classList.toggle("hidden")
+
 }
 
 // Check if user selected some predefined ingredients
@@ -84,24 +87,29 @@ ingredients.forEach((ingredient) => {
     })
 })
 // Add to the fetch
-let listOfIngredients = [];
+let arrayOfIngredients = [];
 function ingredientsData () {
     //Clear the array
-    listOfIngredients = []
+    arrayOfIngredients = []
     //Find the selected ingredients
     ingredients.forEach((ingredient) => {
         if (ingredient.classList.contains("selected")) {
             let currentIngredient = ingredient.querySelector("h2").innerText;
-            listOfIngredients.push(currentIngredient)
+            arrayOfIngredients.push(currentIngredient)
         }
+    })
+}
+// Remove the selected class from the ingredients
+function removeSelectedClass () {
+    ingredients.forEach((ingredient) => {
+        ingredient.classList.remove("selected")
     })
 }
 
 // Generate Drink
 submitButton.addEventListener("click",() => {
     ingredientsData()
-    listOfIngredients = listOfIngredients.join(", ")
-    console.log(listOfIngredients)
+
 
     if (initialToggle === false) {
         showRecipeField()
@@ -112,7 +120,7 @@ submitButton.addEventListener("click",() => {
     inputField.innerHTML = "";
     loadingAnimation(submitButton);
 
-    let listOfIngredients = inputField.value
+    let listOfIngredients = inputField.value + arrayOfIngredients.join(", ")
 
 
     fetch('https://api.openai.com/v1/chat/completions', {
@@ -140,6 +148,8 @@ submitButton.addEventListener("click",() => {
             //
             initialToggle = false
             showRecipeField()
+
+            removeSelectedClass()
 
         }).catch((error) => {
         console.log("There was an error trying to receive your drink. Please try again later.", error)
